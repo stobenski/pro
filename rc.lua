@@ -7,6 +7,7 @@ local beautiful = require("beautiful")
 local vicious   = require("vicious")
 local naughty   = require("naughty")
 local lain      = require("lain")
+local cyclefocus = require('cyclefocus')
 
 -- | Theme | --
 
@@ -35,11 +36,24 @@ do
     end)
 end
 
+-- | Fix's | --
+
+-- Disable cursor animation:
+
+local oldspawn = awful.util.spawn
+awful.util.spawn = function (s)
+    oldspawn(s, false)
+end
+
+-- Java GUI's fix:
+
+awful.util.spawn_with_shell("wmname LG3D")
+
 -- | Variable definitions | --
 
-local home    = os.getenv("HOME")
-local exec    = awful.util.spawn
-local shexec  = awful.util.spawn_with_shell
+local home   = os.getenv("HOME")
+local exec   = function (s) oldspawn(s, false) end
+local shexec = awful.util.spawn_with_shell
 
 modkey        = "Mod4"
 terminal      = "termite"
@@ -497,13 +511,19 @@ globalkeys = awful.util.table.join(
             awful.client.focus.byidx(-1)
             if client.focus then client.focus:raise() end
         end),
-    awful.key({ modkey,           }, "Tab",
-        function ()
-            awful.client.focus.history.previous()
-            if client.focus then
-                client.focus:raise()
-            end
-        end),
+    -- awful.key({ modkey,           }, "Tab",
+    --     function ()
+    --         awful.client.focus.history.previous()
+    --         if client.focus then
+    --             client.focus:raise()
+    --         end
+    --     end),
+    awful.key({ modkey,         }, "Tab", function(c)
+            cyclefocus.cycle(1, {modifier="Super_L"})
+    end),
+    awful.key({ modkey, "Shift" }, "Tab", function(c)
+            cyclefocus.cycle(-1, {modifier="Super_L"})
+    end),
     awful.key({ modkey, "Control" }, "r",      awesome.restart),
     awful.key({ modkey, "Shift"   }, "q",      awesome.quit),
     awful.key({ modkey,           }, "Return", function () exec(terminal) end),
@@ -514,18 +534,18 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey            }, "a",      function () shexec(configuration) end),
     awful.key({ modkey,           }, "u",      function () exec("urxvt -geometry 254x60+80+60") end),
     awful.key({ modkey,           }, "s",      function () exec(filemanager) end),
-    awful.key({ modkey            }, "g",      function () shexec("gvim") end),
-    awful.key({ modkey            }, "Print",  function () shexec("screengrab") end),
-    awful.key({ modkey, "Control" }, "Print",  function () shexec("screengrab --region") end),
-    awful.key({ modkey, "Shift"   }, "Print",  function () shexec("screengrab --active") end),
-    awful.key({ modkey            }, "7",      function () shexec("firefox") end),
-    awful.key({ modkey            }, "8",      function () shexec("chromium") end),
-    awful.key({ modkey            }, "9",      function () shexec("dwb") end),
-    awful.key({ modkey            }, "0",      function () shexec("thunderbird") end),
-    awful.key({ modkey            }, "'",      function () shexec("leafpad") end),
-    awful.key({ modkey            }, "\\",     function () shexec("sublime_text") end),
-    awful.key({ modkey            }, "i",      function () shexec("gcolor2") end),
-    awful.key({ modkey            }, "`",      function () shexec("xwinmosaic") end),
+    awful.key({ modkey            }, "g",      function () exec("gvim") end),
+    awful.key({ modkey            }, "Print",  function () exec("screengrab") end),
+    awful.key({ modkey, "Control" }, "Print",  function () exec("screengrab --region") end),
+    awful.key({ modkey, "Shift"   }, "Print",  function () exec("screengrab --active") end),
+    awful.key({ modkey            }, "7",      function () exec("firefox") end),
+    awful.key({ modkey            }, "8",      function () exec("chromium") end),
+    awful.key({ modkey            }, "9",      function () exec("dwb") end),
+    awful.key({ modkey            }, "0",      function () exec("thunderbird") end),
+    awful.key({ modkey            }, "'",      function () exec("leafpad") end),
+    awful.key({ modkey            }, "\\",     function () exec("sublime_text") end),
+    awful.key({ modkey            }, "i",      function () exec("gcolor2") end),
+    awful.key({ modkey            }, "`",      function () exec("xwinmosaic") end),
     awful.key({ modkey, "Control" }, "m",      function () shexec(ncmpcpp) end),
     awful.key({ modkey, "Control" }, "f",      function () shexec(newsbeuter) end),
     awful.key({ modkey            }, "F5",     function () exec(en_uk) end),
@@ -692,19 +712,6 @@ end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
-
--- | Fix's | --
-
--- Disable cursor animation
-
-local oldspawn = awful.util.spawn
-awful.util.spawn = function (s)
-    oldspawn(s, false)
-end
-
--- Java GUI's fix
-
-awful.util.spawn_with_shell("wmname LG3D")
 
 -- | run_once | --
 
