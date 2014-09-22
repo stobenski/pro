@@ -36,8 +36,8 @@ cyclefocus = {
         position = 'top_right',
         timeout = 0,
         border_width = 0,
-        fg = "#888888",
-        bg = "#2d2c2a",
+        fg = "#FFFFFF55",
+        bg = "#00000055",
     },
 
     naughty_preset_for_offset = {
@@ -62,8 +62,8 @@ cyclefocus = {
 
         -- Preset for current entry.
         ["0"] = function (preset, args)
-            preset.fg = "#BBBBBB"
-            preset.bg = "#2d2c2a"
+            preset.fg = "#DDDDDD"
+            preset.bg = "#1F1F1F"
             preset.font = 'Open Sans 8'
             preset.icon_size = 16
             -- Use get_object_name to handle .name=nil.
