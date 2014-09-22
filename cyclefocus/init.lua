@@ -36,8 +36,8 @@ cyclefocus = {
         position = 'top_right',
         timeout = 0,
         border_width = 0,
-        fg = "#FFFFFF55",
-        bg = "#00000055",
+        fg = "#FFFFFF88",
+        bg = "#22222255",
     },
 
     naughty_preset_for_offset = {

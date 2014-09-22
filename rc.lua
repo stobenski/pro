@@ -550,7 +550,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "f",      function () shexec(newsbeuter) end),
     awful.key({ modkey            }, "F5",     function () exec(en_uk) end),
     awful.key({ modkey            }, "F6",     function () exec(en_ru) end),
-    awful.key({ modkey            }, "Pause",  function () exec("VirtualBox --startvm '02f99d72-fe62-4269-8c8c-b1632faa1d63'") end)
+    awful.key({ modkey            }, "Pause",  function () exec("VirtualBox --startvm 'a8d5ac56-b0d2-4f7f-85be-20666d2f46df'") end)
     -- awful.key({ modkey }, "x",
     --           function ()
     --               awful.prompt.run({ prompt = "Run Lua code: " },
