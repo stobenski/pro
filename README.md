@@ -20,7 +20,7 @@
 
 #### Information:
 
-[https://github.com/blueyed/awesome-cyclefocus](Cyclefocus) by **Daniel Hahler**
-[https://github.com/copycat-killer/lain](Lain) by **Luke Bonham**
+[Cyclefocus](https://github.com/blueyed/awesome-cyclefocus) by **Daniel Hahler**
 
+[Lain](https://github.com/copycat-killer/lain) by **Luke Bonham**
 
