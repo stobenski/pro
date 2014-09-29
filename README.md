@@ -26,9 +26,11 @@
 
 [Wallpapers](https://dribbble.com/shots/1479745-50-Free-Tessellated-Designs) by Justin
 
+---
+
 #### Requirements
 
-1. [Patched] (fixed bug) (https://github.com/awesomeWM/awesome/pull/39) taglist ([download](https://github.com/gyrfalco/pro/blob/master/patched/taglist.lua))
+1. [Patched](https://github.com/awesomeWM/awesome/pull/39) (fixed bug) taglist ([download](https://github.com/gyrfalco/pro/blob/master/patched/taglist.lua))
 
 2. Patched (just one space symbol added in name=" " variable) tasklist ([download](https://github.com/gyrfalco/pro/blob/master/patched/tasklist.lua))
 
@@ -38,7 +40,7 @@
 ```
 which causes errors in log/tty1, but everything works well.
 
-For avoiding that errors, just start awesome with errorlog redirection, example from my ~/.xinitrc file:
+For hiding these errors just start awesome with errorlog redirection, example from my ~/.xinitrc file:
 ```sh
     exec awesome 2>> /dev/null
 ```
