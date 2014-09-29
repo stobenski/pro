@@ -1,4 +1,4 @@
-# Awesome Pro themes
+# Pro themes for Awesome WM 3.5+
 
 ![](https://raw.githubusercontent.com/gyrfalco/pro/master/screenshots/pro-preview.png)
 
@@ -17,4 +17,10 @@
 ### Pro Light
 ![](https://raw.githubusercontent.com/gyrfalco/pro/master/screenshots/pro-light.png)
 ---
+
+#### Information:
+
+[https://github.com/blueyed/awesome-cyclefocus](Cyclefocus) by **Daniel Hahler**
+[https://github.com/copycat-killer/lain](Lain) by **Luke Bonham**
+
 
