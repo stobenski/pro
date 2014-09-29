@@ -1,17 +1,17 @@
-local gears     = require("gears")
-local awful     = require("awful")
-awful.rules     = require("awful.rules")
-                  require("awful.autofocus")
-local wibox     = require("wibox")
-local beautiful = require("beautiful")
-local vicious   = require("vicious")
-local naughty   = require("naughty")
-local lain      = require("lain")
+local gears      = require("gears")
+local awful      = require("awful")
+awful.rules      = require("awful.rules")
+                   require("awful.autofocus")
+local wibox      = require("wibox")
+local beautiful  = require("beautiful")
+local vicious    = require("vicious")
+local naughty    = require("naughty")
+local lain       = require("lain")
 local cyclefocus = require('cyclefocus')
 
 -- | Theme | --
 
-local theme = "pro-v1"
+local theme = "pro-dark"
 
 beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/" .. theme .. "/theme.lua")
 
@@ -140,19 +140,16 @@ widget_display_c:set_image(beautiful.widget_display_c)
 
 -- | MPD | --
 
-mpd_spr = wibox.widget.imagebox()
-mpd_spr:set_image(beautiful.mpd_spr)
 prev_icon = wibox.widget.imagebox()
-prev_icon:set_image(beautiful.prev)
+prev_icon:set_image(beautiful.mpd_prev)
 next_icon = wibox.widget.imagebox()
-next_icon:set_image(beautiful.nex)
+next_icon:set_image(beautiful.mpd_nex)
 stop_icon = wibox.widget.imagebox()
-stop_icon:set_image(beautiful.stop)
+stop_icon:set_image(beautiful.mpd_stop)
 pause_icon = wibox.widget.imagebox()
-pause_icon:set_image(beautiful.pause)
+pause_icon:set_image(beautiful.mpd_pause)
 play_pause_icon = wibox.widget.imagebox()
-play_pause_icon:set_image(beautiful.play)
-
+play_pause_icon:set_image(beautiful.mpd_play)
 mpd_sepl = wibox.widget.imagebox()
 mpd_sepl:set_image(beautiful.mpd_sepl)
 mpd_sepr = wibox.widget.imagebox()
@@ -169,21 +166,21 @@ mpdwidget = lain.widgets.mpd({
                               .. " - " ..
                               mpd_now.title
                               .. markup.font("Tamsyn 2", " ")))
-            play_pause_icon:set_image(beautiful.pause)
+            play_pause_icon:set_image(beautiful.mpd_pause)
             mpd_sepl:set_image(beautiful.mpd_sepl)
             mpd_sepr:set_image(beautiful.mpd_sepr)
         elseif mpd_now.state == "pause" then
             widget:set_markup(markup.font("Tamsyn 4", "") ..
                               markup.font("Tamsyn 7", "MPD PAUSED") ..
                               markup.font("Tamsyn 10", ""))
-            play_pause_icon:set_image(beautiful.play)
+            play_pause_icon:set_image(beautiful.mpd_play)
             mpd_sepl:set_image(beautiful.mpd_sepl)
             mpd_sepr:set_image(beautiful.mpd_sepr)
         else
             widget:set_markup("")
-            play_pause_icon:set_image(beautiful.play)
-            mpd_sepl:set_image(beautiful.spr4px)
-            mpd_sepr:set_image(beautiful.sprt)
+            play_pause_icon:set_image(beautiful.mpd_play)
+            mpd_sepl:set_image(nil)
+            mpd_sepr:set_image(nil)
         end
     end
 })
@@ -405,13 +402,12 @@ for s = 1, screen.count() do
 
     right_layout:add(spr)
 
-    right_layout:add(spr5px)
     right_layout:add(prev_icon)
-    right_layout:add(mpd_spr)
+    right_layout:add(spr)
     right_layout:add(stop_icon)
-    right_layout:add(mpd_spr)
+    right_layout:add(spr)
     right_layout:add(play_pause_icon)
-    right_layout:add(mpd_spr)
+    right_layout:add(spr)
     right_layout:add(next_icon)
     right_layout:add(mpd_sepl)
     right_layout:add(musicwidget)
@@ -419,62 +415,61 @@ for s = 1, screen.count() do
 
     right_layout:add(spr)
 
-    right_layout:add(spr5px)
     right_layout:add(widget_mail)
+    right_layout:add(widget_display_l)
     right_layout:add(mailwidget)
     right_layout:add(widget_display_r)
     right_layout:add(spr5px)
 
     right_layout:add(spr)
 
-    right_layout:add(spr5px)
     right_layout:add(widget_cpu)
+    right_layout:add(widget_display_l)
     right_layout:add(cpuwidget)
     right_layout:add(widget_display_r)
     -- right_layout:add(widget_display_c)
     -- right_layout:add(tmpwidget)
     -- right_layout:add(widget_tmp)
+    -- right_layout:add(widget_display_r)
     right_layout:add(spr5px)
 
     right_layout:add(spr)
 
-    right_layout:add(spr5px)
     right_layout:add(widget_mem)
+    right_layout:add(widget_display_l)
     right_layout:add(memwidget)
     right_layout:add(widget_display_r)
     right_layout:add(spr5px)
 
     right_layout:add(spr)
 
-    right_layout:add(spr5px)
     right_layout:add(widget_fs)
+    right_layout:add(widget_display_l)
     right_layout:add(fswidget)
     right_layout:add(widget_display_r)
     right_layout:add(spr5px)
 
     right_layout:add(spr)
 
-    right_layout:add(spr5px)
     right_layout:add(widget_netdl)
+    right_layout:add(widget_display_l)
     right_layout:add(netwidgetdl)
     right_layout:add(widget_display_c)
     right_layout:add(netwidgetul)
+    right_layout:add(widget_display_r)
     right_layout:add(widget_netul)
-    right_layout:add(spr5px)
 
     right_layout:add(spr)
 
-    right_layout:add(spr5px)
     right_layout:add(widget_clock)
+    right_layout:add(widget_display_l)
     right_layout:add(clockwidget)
     right_layout:add(widget_display_r)
     right_layout:add(spr5px)
 
     right_layout:add(spr)
 
-    right_layout:add(spr5px)
     right_layout:add(mylayoutbox[s])
-    right_layout:add(spr5px)
 
     local layout = wibox.layout.align.horizontal()
     layout:set_left(left_layout)
@@ -730,5 +725,5 @@ os.execute("pkill compton")
 os.execute("setxkbmap -layout 'us,ua' -variant 'winkeys' -option 'grp:caps_toggle,grp_led:caps,compose:menu' &")
 run_once("parcellite")
 run_once("kbdd")
-run_once("compton")
+-- run_once("compton")
 

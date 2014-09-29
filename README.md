@@ -2,17 +2,17 @@
 
 ---
 
-### Pro v1
-![](https://raw.githubusercontent.com/gyrfalco/pro/master/screenshots/v1.png)
+### Pro Dark
+![](https://raw.githubusercontent.com/gyrfalco/pro/master/screenshots/pro-dark.png)
 
-### Pro v2
-![](https://raw.githubusercontent.com/gyrfalco/pro/master/screenshots/v2.png)
+### Pro Medium Dark
+![](https://raw.githubusercontent.com/gyrfalco/pro/master/screenshots/pro-medium-dark.png)
 
-### Pro v3
-![](https://raw.githubusercontent.com/gyrfalco/pro/master/screenshots/v3.png)
+### Pro Medium Light
+![](https://raw.githubusercontent.com/gyrfalco/pro/master/screenshots/pro-medium-light.png)
 
-### Pro v3r2
-![](https://raw.githubusercontent.com/gyrfalco/pro/master/screenshots/v3r2.png)
+### Pro Light
+![](https://raw.githubusercontent.com/gyrfalco/pro/master/screenshots/pro-light.png)
 
 ---
 
