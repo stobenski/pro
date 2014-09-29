@@ -15,12 +15,12 @@ theme.wallpaper  = os.getenv("HOME") .. "/.config/awesome/themes/pro-light/wallp
 theme.panel      = "png:" .. theme.icons .. "/panel/panel.png"
 theme.font       = "Terminus 8"
 
-theme.fg_normal  = "#3d3d3d"
-theme.fg_focus   = "#e4e4e4"
+theme.fg_normal  = "#3D3D3D"
+theme.fg_focus   = "#333333"
 theme.fg_urgent  = "#CC9393"
 
-theme.bg_normal  = "#3F3F3F"
-theme.bg_focus   = "#5a5a5a"
+theme.bg_normal  = "#D6D6D6"
+theme.bg_focus   = "#A4A4A4"
 theme.bg_urgent  = "#3F3F3F"
 -- theme.bg_systray = "#2E2D2B"
 theme.bg_systray = "#000000" .. 0.01 -- transparent tray fix

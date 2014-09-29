@@ -14,12 +14,12 @@ theme.wallpaper  = os.getenv("HOME") .. "/.config/awesome/themes/pro-medium-ligh
 theme.panel      = "png:" .. theme.icons .. "/panel/panel.png"
 theme.font       = "Terminus 9"
 
-theme.fg_normal  = "#dddddd"
-theme.fg_focus   = "#e4e4e4"
+theme.fg_normal  = "#404040"
+theme.fg_focus   = "#111111"
 theme.fg_urgent  = "#CC9393"
 
-theme.bg_normal  = "#3F3F3F"
-theme.bg_focus   = "#5a5a5a"
+theme.bg_normal  = "#B8B8B8"
+theme.bg_focus   = "#888888"
 theme.bg_urgent  = "#3F3F3F"
 -- theme.bg_systray = "#2E2D2B"
 theme.bg_systray = "#000000" .. 0.01 -- transparent tray fix
