@@ -725,5 +725,5 @@ os.execute("pkill compton")
 os.execute("setxkbmap -layout 'us,ua' -variant 'winkeys' -option 'grp:caps_toggle,grp_led:caps,compose:menu' &")
 run_once("parcellite")
 run_once("kbdd")
-run_once("compton")
+-- run_once("compton")
 

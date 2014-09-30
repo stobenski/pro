@@ -1,6 +1,7 @@
 # Pro themes for Awesome WM 3.5+
 
 ![](https://raw.githubusercontent.com/gyrfalco/pro/master/screenshots/pro-preview.png)
+---
 
 ### Pro Dark
 ![](https://raw.githubusercontent.com/gyrfalco/pro/master/screenshots/pro-dark.png)
@@ -16,6 +17,10 @@
 
 ### Pro Light
 ![](https://raw.githubusercontent.com/gyrfalco/pro/master/screenshots/pro-light.png)
+---
+
+##### Alternative tags
+![](https://raw.githubusercontent.com/gyrfalco/pro/master/screenshots/alternative-tags.png)
 ---
 
 #### Description
@@ -44,5 +49,8 @@ For hiding these errors just start awesome with errorlog redirection, example fr
 ```sh
     exec awesome 2>> /dev/null
 ```
+---
+
+Work in progress: GTK2/3, Firefox, Chromium and Qt theme.
 
 
