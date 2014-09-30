@@ -61,6 +61,8 @@ Work in progress: GTK2/3, Firefox, Chromium and Qt theme.
 ##### F.A.Q.
 
 If you have issue with tray like this:
+
 ![](https://raw.githubusercontent.com/gyrfalco/pro/master/screenshots/tray-issue.png)
-just restart tray apps or restart (redraw) awesome.
+
+just restart tray apps or restart (mod4+Ctrl+r) awesome.
 
