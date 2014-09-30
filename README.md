@@ -1,9 +1,9 @@
 # Pro themes for Awesome WM 3.5+
 
-![](https://raw.githubusercontent.com/gyrfalco/pro/master/screenshots/pro-preview.png)
+![](https://raw.githubusercontent.com/gyrfalco/pro/master/screenshots/pro.png)
 ---
 
-![](https://raw.githubusercontent.com/gyrfalco/pro/master/screenshots/pro.png)
+![](https://raw.githubusercontent.com/gyrfalco/pro/master/screenshots/pro-preview.png)
 ---
 
 ##### Alternative tags
