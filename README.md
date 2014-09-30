@@ -3,6 +3,13 @@
 ![](https://raw.githubusercontent.com/gyrfalco/pro/master/screenshots/pro-preview.png)
 ---
 
+![](https://raw.githubusercontent.com/gyrfalco/pro/master/screenshots/pro.png)
+---
+
+##### Alternative tags
+![](https://raw.githubusercontent.com/gyrfalco/pro/master/screenshots/alternative-tags.png)
+---
+
 ### Pro Dark
 ![](https://raw.githubusercontent.com/gyrfalco/pro/master/screenshots/pro-dark.png)
 ---
@@ -19,10 +26,6 @@
 ![](https://raw.githubusercontent.com/gyrfalco/pro/master/screenshots/pro-light.png)
 ---
 
-##### Alternative tags
-![](https://raw.githubusercontent.com/gyrfalco/pro/master/screenshots/alternative-tags.png)
----
-
 #### Description
 
 [Cyclefocus](https://github.com/blueyed/awesome-cyclefocus) by **Daniel Hahler**
@@ -30,7 +33,6 @@
 [Lain](https://github.com/copycat-killer/lain) by **Luke Bonham**
 
 [Wallpapers](https://dribbble.com/shots/1479745-50-Free-Tessellated-Designs) by Justin
-
 ---
 
 #### Requirements
@@ -53,4 +55,11 @@ For hiding these errors just start awesome with errorlog redirection, example fr
 
 Work in progress: GTK2/3, Firefox, Chromium and Qt theme.
 
+---
+
+##### F.A.Q.
+
+If you have issue with tray like this:
+![](https://raw.githubusercontent.com/gyrfalco/pro/master/screenshots/tray-issue.png)
+just restart tray apps or restart (redraw) awesome.
 
