@@ -1,29 +1,30 @@
 
-                -- [    Pro Dark theme for Awesome 3.5.5    ] --
-                -- [            author: gyrfalco            ] --
-                -- [    http://github.com/gyrfalco/pro      ] --
+                -- [    Pro Gotham theme for Awesome 3.5.5    ] --
+                -- [              author: gyrfalco            ] --
+                -- [      http://github.com/gyrfalco/pro      ] --
 
+-- // based on gotham colorscheme by Andrea Leopardi (https://github.com/whatyouhide/vim-gotham)
 -- // got the idea from Holo theme by Luke Bonham (https://github.com/copycat-killer)
 
 -- patch for taglist: https://github.com/awesomeWM/awesome/pull/39
 
 theme            = {}
-theme.icons      = os.getenv("HOME") .. "/.config/awesome/themes/pro-dark/icons/"
-theme.wallpaper  = os.getenv("HOME") .. "/.config/awesome/themes/pro-dark/wallpapers/pro-dark-shadow.png"
+theme.icons      = os.getenv("HOME") .. "/.config/awesome/themes/pro-gotham/icons/"
+theme.wallpaper  = os.getenv("HOME") .. "/.config/awesome/themes/pro-gotham/wallpapers/pro-gotham-shadow.png"
 theme.panel      = "png:" .. theme.icons .. "/panel/panel.png"
 theme.font       = "Terminus 9"
 
-theme.fg_normal  = "#888888"
-theme.fg_focus   = "#e4e4e4"
-theme.fg_urgent  = "#CC9393"
+theme.fg_normal  = "#74aeab"
+theme.fg_focus   = "#84bfbc"
+theme.fg_urgent  = "#84bfbc"
 
-theme.bg_normal  = "#3F3F3F"
-theme.bg_focus   = "#5a5a5a"
+theme.bg_normal  = "#0a0f14"
+theme.bg_focus   = "#1a4b5c"
 theme.bg_urgent  = "#3F3F3F"
--- theme.bg_systray = "#343434"
-theme.bg_systray = "#000000" .. 0.01 -- transparent tray fix 
+theme.bg_systray = "#0d1217"
+-- theme.bg_systray = "#000000" .. 0.01 -- transparent tray fix 
 
-theme.clockgf    = "#d5d5c3"
+theme.clockgf    = "#99d1ce"
 
 -- | Borders | --
 
@@ -60,9 +61,9 @@ theme.tasklist_disable_icon         = true
 theme.tasklist_bg_normal            = "png:" .. theme.icons .. "panel/tasklist/normal.png"
 theme.tasklist_bg_focus             = "png:" .. theme.icons .. "panel/tasklist/focus.png"
 theme.tasklist_bg_urgent            = "png:" .. theme.icons .. "panel/tasklist/urgent.png"
-theme.tasklist_fg_focus             = "#DDDDDD"
-theme.tasklist_fg_urgent            = "#EEEEEE"
-theme.tasklist_fg_normal            = "#AAAAAA"
+theme.tasklist_fg_focus             = "#addedb"
+theme.tasklist_fg_urgent            = "#99d1ce"
+theme.tasklist_fg_normal            = "#99d1ce"
 theme.tasklist_floating             = ""
 theme.tasklist_sticky               = ""
 theme.tasklist_ontop                = ""
