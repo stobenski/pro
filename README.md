@@ -29,7 +29,7 @@
 ### Pro Gotham
 ![](https://raw.githubusercontent.com/gyrfalco/pro/master/screenshots/pro-gotham.png)
 
-*based on [vim-gotham](https://github.com/whatyouhide/vim-gotham) colorscheme by Andrea Leopardi
+*based on [vim-gotham](https://github.com/whatyouhide/vim-gotham) colorscheme by Andrea Leopardi*
 ---
 
 #### Description
