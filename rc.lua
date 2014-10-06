@@ -11,7 +11,7 @@ local cyclefocus = require('cyclefocus')
 
 -- | Theme | --
 
-local theme = "pro-dark"
+local theme = "pro-gotham"
 
 beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/" .. theme .. "/theme.lua")
 
@@ -513,12 +513,16 @@ globalkeys = awful.util.table.join(
     --             client.focus:raise()
     --         end
     --     end),
-    awful.key({ modkey,         }, "Tab", function(c)
-            cyclefocus.cycle(1, {modifier="Super_L"})
-    end),
-    awful.key({ modkey, "Shift" }, "Tab", function(c)
-            cyclefocus.cycle(-1, {modifier="Super_L"})
-    end),
+    -- awful.key({ modkey,         }, "Tab", function(c)
+    --         cyclefocus.cycle(1, {modifier="Super_L"})
+    -- end),
+    -- awful.key({ modkey, "Shift" }, "Tab", function(c)
+    --         cyclefocus.cycle(-1, {modifier="Super_L"})
+    -- end),
+    cyclefocus.key({ "Mod1", }, "Tab", 1, {
+        cycle_filters = { cyclefocus.filters.same_screen, cyclefocus.filters.common_tag },
+        keys = {'Tab', 'ISO_Left_Tab'}
+    }),
     awful.key({ modkey, "Control" }, "r",      awesome.restart),
     awful.key({ modkey, "Shift"   }, "q",      awesome.quit),
     awful.key({ modkey,           }, "Return", function () exec(terminal) end),
