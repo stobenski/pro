@@ -67,6 +67,13 @@ Work in progress: GTK2/3, Firefox, Chromium and Qt theme.
 
 ##### F.A.Q.
 
+Note that Lain and Cyclefocus added as submodules, for cloning repo you must use command:
+```
+git clone --recursive https://github.com/gyrfalco/pro
+```
+
+---
+
 If you have an issue with tray like this:
 
 ![](https://raw.githubusercontent.com/gyrfalco/pro/master/screenshots/tray-issue.png)
