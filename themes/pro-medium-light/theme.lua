@@ -21,8 +21,7 @@ theme.fg_urgent  = "#CC9393"
 theme.bg_normal  = "#B8B8B8"
 theme.bg_focus   = "#888888"
 theme.bg_urgent  = "#3F3F3F"
--- theme.bg_systray = "#2E2D2B"
-theme.bg_systray = "#000000" .. 0.01 -- transparent tray fix
+theme.bg_systray = "#b8b8b8"
 
 theme.clockgf    = "#eeeeee"
 

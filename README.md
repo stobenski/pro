@@ -47,18 +47,8 @@
 
 1. [Patched](https://github.com/awesomeWM/awesome/pull/39) (fixed bug) taglist ([download](https://github.com/gyrfalco/pro/blob/master/patched/taglist.lua))
 
-2. Patched (just one space symbol added in name=" " variable) tasklist ([download](https://github.com/gyrfalco/pro/blob/master/patched/tasklist.lua))
+2. Patched (just added one space symbol in name=" " variable) tasklist ([download](https://github.com/gyrfalco/pro/blob/master/patched/tasklist.lua))
 
-3. For transparent tray we use hack (because of [#1198](https://awesome.naquadah.org/bugs/index.php?do=details&task_id=1198) bug in awesome):
-```lua
-    theme.bg_systray = "#000000" .. 0.01
-```
-which causes errors in log/tty1, but everything works well.
-
-For hiding these errors just start awesome with errorlog redirection, example from my ~/.xinitrc file:
-```sh
-    exec awesome 2>> /dev/null
-```
 ---
 
 Work in progress: GTK2/3, Firefox, Chromium and Qt theme.
@@ -73,10 +63,4 @@ git clone --recursive https://github.com/gyrfalco/pro
 ```
 
 ---
-
-If you have an issue with tray like this:
-
-![](https://raw.githubusercontent.com/gyrfalco/pro/master/screenshots/tray-issue.png)
-
-just restart tray apps or restart (mod4+Ctrl+r) awesome.
 
