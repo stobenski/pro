@@ -60,12 +60,8 @@ terminal      = "termite"
 tmux          = "termite -e tmux"
 termax        = "termite --geometry 1680x1034+0+22"
 rootterm      = "sudo -i termite"
-ncmpcpp       = "urxvt -geometry 254x60+80+60 -e ncmpcpp"
-newsbeuter    = "urxvt -g 210x50+50+50 -e newsbeuter"
 browser       = "firefox"
 filemanager   = "spacefm"
-en_uk         = "setxkbmap -layout 'us,ua' -variant 'winkeys' -option 'grp:caps_toggle,grp_led:caps,compose:menu' &"
-en_ru         = "setxkbmap -layout 'us,ru' -variant 'winkeys' -option 'grp:caps_toggle,grp_led:caps,compose:menu' &"
 configuration = termax .. ' -e "vim -O $HOME/.config/awesome/rc.lua $HOME/.config/awesome/themes/' ..theme.. '/theme.lua"'
 
 -- | Table of layouts | --
@@ -275,6 +271,7 @@ fswidget:set_bgimage(beautiful.widget_display)
 
 net_widgetdl = wibox.widget.textbox()
 net_widgetul = lain.widgets.net({
+    iface = "eth0",
     settings = function()
         widget:set_markup(markup.font("Tamsyn 1", "  ") .. net_now.sent)
         net_widgetdl:set_markup(markup.font("Tamsyn 1", " ") .. net_now.received .. markup.font("Tamsyn 1", " "))
@@ -491,10 +488,10 @@ root.buttons(awful.util.table.join(
 
 -- | Key bindings | --
 
+
 globalkeys = awful.util.table.join(
 
     awful.key({ modkey,           }, "w",      function () mainmenu:show() end),
-    awful.key({ modkey,           }, "Escape", function () exec("/usr/local/sbin/zaprat --toggle") end),
     awful.key({ modkey            }, "r",      function () mypromptbox[mouse.screen]:run() end),
     awful.key({ modkey,           }, "j",
         function ()
@@ -527,37 +524,14 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "q",      awesome.quit),
     awful.key({ modkey,           }, "Return", function () exec(terminal) end),
     awful.key({ modkey, "Control" }, "Return", function () exec(rootterm) end),
-    awful.key({ modkey,           }, "t",      function () exec(tmux) end),
     awful.key({ modkey,           }, "space",  function () awful.layout.inc(layouts,  1) end),
     awful.key({ modkey, "Shift"   }, "space",  function () awful.layout.inc(layouts, -1) end),
-    awful.key({ modkey            }, "a",      function () shexec(configuration) end),
-    awful.key({ modkey,           }, "u",      function () exec("urxvt -geometry 254x60+80+60") end),
-    awful.key({ modkey,           }, "s",      function () exec(filemanager) end),
-    awful.key({ modkey            }, "g",      function () exec("gvim") end),
-    awful.key({ modkey            }, "Print",  function () exec("screengrab") end),
-    awful.key({ modkey, "Control" }, "Print",  function () exec("screengrab --region") end),
-    awful.key({ modkey, "Shift"   }, "Print",  function () exec("screengrab --active") end),
-    awful.key({ modkey            }, "7",      function () exec("firefox") end),
-    awful.key({ modkey            }, "8",      function () exec("chromium") end),
-    awful.key({ modkey            }, "9",      function () exec("dwb") end),
-    awful.key({ modkey            }, "0",      function () exec("thunderbird") end),
-    awful.key({ modkey            }, "'",      function () exec("leafpad") end),
-    awful.key({ modkey            }, "\\",     function () exec("sublime_text") end),
-    awful.key({ modkey            }, "i",      function () exec("gcolor2") end),
-    awful.key({ modkey            }, "`",      function () exec("xwinmosaic") end),
-    awful.key({ modkey, "Control" }, "m",      function () shexec(ncmpcpp) end),
-    awful.key({ modkey, "Control" }, "f",      function () shexec(newsbeuter) end),
-    awful.key({ modkey            }, "F5",     function () exec(en_uk) end),
-    awful.key({ modkey            }, "F6",     function () exec(en_ru) end),
-    awful.key({ modkey            }, "Pause",  function () exec("VirtualBox --startvm 'a8d5ac56-b0d2-4f7f-85be-20666d2f46df'") end)
-    -- awful.key({ modkey }, "x",
-    --           function ()
-    --               awful.prompt.run({ prompt = "Run Lua code: " },
-    --               mypromptbox[mouse.screen].widget,
-    --               awful.util.eval, nil,
-    --               awful.util.getdir("cache") .. "/history_eval")
-    --           end)
+    -- awful.key({ modkey            }, "a",      function () shexec(configuration) end),
 )
+
+local wa = screen[mouse.screen].workarea
+ww = wa.width
+wh = wa.height
 
 clientkeys = awful.util.table.join(
     awful.key({ modkey            }, "Next",   function () awful.client.moveresize( 20,  20, -40, -40) end),
@@ -566,6 +540,10 @@ clientkeys = awful.util.table.join(
     awful.key({ modkey            }, "Up",     function () awful.client.moveresize(  0, -20,   0,   0) end),
     awful.key({ modkey            }, "Left",   function () awful.client.moveresize(-20,   0,   0,   0) end),
     awful.key({ modkey            }, "Right",  function () awful.client.moveresize( 20,   0,   0,   0) end),
+    awful.key({ modkey, "Control" }, "Left",   function (c) c:geometry( { width = ww / 2, height = wh, x = 0, y = 22 } ) end),
+    awful.key({ modkey, "Control" }, "Right",  function (c) c:geometry( { width = ww / 2, height = wh, x = ww / 2, y = 22 } ) end),
+    awful.key({ modkey, "Control" }, "Up",     function (c) c:geometry( { width = ww, height = wh / 2, x = 0, y = 22 } ) end),
+    awful.key({ modkey, "Control" }, "Down",   function (c) c:geometry( { width = ww, height = wh / 2, x = 0, y = wh / 2 + 22 } ) end),
     awful.key({ modkey,           }, "f",      function (c) c.fullscreen = not c.fullscreen  end),
     awful.key({ modkey,           }, "c",      function (c) c:kill()                         end),
     awful.key({ modkey,           }, "n",
@@ -726,9 +704,7 @@ end
 
 -- | Autostart | --
 
-os.execute("pkill compton")
-os.execute("setxkbmap -layout 'us,ua' -variant 'winkeys' -option 'grp:caps_toggle,grp_led:caps,compose:menu' &")
-run_once("parcellite")
-run_once("kbdd")
+-- os.execute("pkill compton")
 -- run_once("compton")
+-- run_once("parcellite")
 
