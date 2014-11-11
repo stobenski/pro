@@ -1,7 +1,7 @@
 
                 -- [    Pro Gotham theme for Awesome 3.5.5    ] --
-                -- [              author: gyrfalco            ] --
-                -- [      http://github.com/gyrfalco/pro      ] --
+                -- [              author: barwinco            ] --
+                -- [      http://github.com/barwinco/pro      ] --
 
 -- // based on gotham colorscheme by Andrea Leopardi (https://github.com/whatyouhide/vim-gotham)
 -- // got the idea from Holo theme by Luke Bonham (https://github.com/copycat-killer)
