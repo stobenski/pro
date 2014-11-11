@@ -47,7 +47,10 @@
 
 * Mod4 + arrows keys: move windows (clients).
 * Mod4 + PgDn/PgUp: scale.
-* Mod4 + Ctrl + arrows keys: move and resize a window to fill the Left, Right, Top (Up), or Bottom (Down) half of the screen.
+
+###### SizeUp / ShiftIt / Spectacle-like window management:
+
+* Mod4 + Ctrl + keypad keys: move and resize a window to fill the Left, Right, Top, or Bottom half or quarter of the screen.
 
 #### Requirements
 
