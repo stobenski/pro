@@ -43,6 +43,12 @@
 
 ---
 
+#### Custom keybindings in floating mode:
+
+* Mod4 + arrows keys: move windows (clients).
+* Mod4 + PgDn/PgUp: scale.
+* Mod4 + Ctrl + arrows keys: move and resize a window to fill the Left, Right, Top (Up), or Bottom (Down) half of the screen.
+
 #### Requirements
 
 1. [Patched](https://github.com/awesomeWM/awesome/pull/39) (fixed bug) taglist ([download](https://github.com/barwinco/pro/blob/master/patched/taglist.lua))

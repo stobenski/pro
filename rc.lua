@@ -525,7 +525,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Return", function () exec(terminal) end),
     awful.key({ modkey, "Control" }, "Return", function () exec(rootterm) end),
     awful.key({ modkey,           }, "space",  function () awful.layout.inc(layouts,  1) end),
-    awful.key({ modkey, "Shift"   }, "space",  function () awful.layout.inc(layouts, -1) end),
+    awful.key({ modkey, "Shift"   }, "space",  function () awful.layout.inc(layouts, -1) end)
     -- awful.key({ modkey            }, "a",      function () shexec(configuration) end),
 )
 
