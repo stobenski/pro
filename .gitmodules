@@ -1,6 +1,0 @@
-[submodule "lain"]
-	path = lain
-	url = https://github.com/copycat-killer/lain
-[submodule "cyclefocus"]
-	path = cyclefocus
-	url = https://github.com/blueyed/awesome-cyclefocus
