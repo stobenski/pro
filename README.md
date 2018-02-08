@@ -1,82 +1,68 @@
-# Awesome WM 4.x Pro
-====================
+# Awesome WM 4.x Pro themes 
+---------------------
 
-### Pro themes for Awesome WM 4.x
+## Description
+A set of themes for the Awesome window manager, version 4.x.
 
+## Gallery
 
-![](https://raw.githubusercontent.com/barwinco/pro/master/screenshots/pro.png)
+![](https://raw.githubusercontent.com/4ban/awesome-pro/master/screenshots/pro.png)
 ---
 
-![](https://raw.githubusercontent.com/barwinco/pro/master/screenshots/pro-preview.png)
+![](https://raw.githubusercontent.com/4ban/awesome-pro/master/screenshots/pro-preview.png)
 ---
 
 ##### Alternative tags
-![](https://raw.githubusercontent.com/barwinco/pro/master/screenshots/alternative-tags.png)
+![](https://raw.githubusercontent.com/4ban/awesome-pro/master/screenshots/alternative-tags.png)
 ---
 
 ### Pro Dark
-![](https://raw.githubusercontent.com/barwinco/pro/master/screenshots/pro-dark.png)
+![](https://raw.githubusercontent.com/4ban/awesome-pro/master/screenshots/pro-dark.png)
 ---
 
 ### Pro Medium Dark
-![](https://raw.githubusercontent.com/barwinco/pro/master/screenshots/pro-medium-dark.png)
+![](https://raw.githubusercontent.com/4ban/awesome-pro/master/screenshots/pro-medium-dark.png)
 ---
 
 ### Pro Medium Light
-![](https://raw.githubusercontent.com/barwinco/pro/master/screenshots/pro-medium-light.png)
+![](https://raw.githubusercontent.com/4ban/awesome-pro/master/screenshots/pro-medium-light.png)
 ---
 
 ### Pro Light
-![](https://raw.githubusercontent.com/barwinco/pro/master/screenshots/pro-light.png)
+![](https://raw.githubusercontent.com/4ban/awesome-pro/master/screenshots/pro-light.png)
 ---
 
 ### Pro Gotham
-![](https://raw.githubusercontent.com/barwinco/pro/master/screenshots/pro-gotham.png)
-
-*based on [vim-gotham](https://github.com/whatyouhide/vim-gotham) colorscheme by Andrea Leopardi*
+![](https://raw.githubusercontent.com/4ban/awesome-pro/master/screenshots/pro-gotham.png)
 
 ---
 
-#### Description
+## Installation
 
-[Cyclefocus](https://github.com/blueyed/awesome-cyclefocus) by **Daniel Hahler**
+`git clone --recursive https://github.com/4ban/awesome-pro.git`
 
-[Lain](https://github.com/copycat-killer/lain) by **Luke Bonham**
+`mv -bv awesome-pro/* ~/.config/awesome; rm -rf awesome-pro`
+
+## Requirements
+Complements are provided by [Lain](https://github.com/lcpz/lain) and [freedesktop](https://github.com/lcpz/freedesktop) and [scratch](https://github.com/proteansec/awesome-scratch).
+
+Fonts are Terminus, Tamzen, Meslo LGS and Tamsyn.
+
+Additional default software used:
+
+`unclutter firefox scrot mpd mpc dmenu xsel xlock i3lock`
+
+
+## Notes
+Every theme has a colorscheme.
 
 [Wallpapers](https://dribbble.com/shots/1479745-50-Free-Tessellated-Designs) by **Justin**
 
----
 
-#### Custom keybindings in floating mode:
-
-* Mod4 + arrows keys: move windows (clients).
-* Mod4 + PgDn/PgUp: scale.
-
-###### SizeUp / ShiftIt / Spectacle-like window management:
-
-* Mod4 + Ctrl + keypad keys: move and resize a window to fill the Left, Right, Top, or Bottom half or quarter of the screen.
-
-#### Requirements
-
-1. [Patched](https://github.com/awesomeWM/awesome/pull/39) (fixed bug) taglist ([download](https://github.com/barwinco/pro/blob/master/patched/taglist.lua))
-
-2. Patched (just added one space symbol in name=" " variable) tasklist ([download](https://github.com/barwinco/pro/blob/master/patched/tasklist.lua))
-
----
-
-Work in progress: GTK2/3, Firefox, Chromium and Qt theme.
-
----
 
 ##### F.A.Q.
 
-Note that Lain and Cyclefocus added as submodules, for cloning repo you must use command:
+Note that Lain, Freedesktop and Scratch added as submodules, for cloning repo you must use command:
 ```
-git clone --recursive https://github.com/barwinco/pro
+git clone --recursive https://github.com/4ban/awesome-pro.git
 ```
-
----
-
-tamsyn font
-terminus
-meslo lgs
