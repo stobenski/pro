@@ -1,4 +1,8 @@
-# Pro themes for Awesome WM 3.5+
+# Awesome WM 4.x Pro
+====================
+
+### Pro themes for Awesome WM 4.x
+
 
 ![](https://raw.githubusercontent.com/barwinco/pro/master/screenshots/pro.png)
 ---
@@ -73,3 +77,6 @@ git clone --recursive https://github.com/barwinco/pro
 
 ---
 
+tamsyn font
+terminus
+meslo lgs
