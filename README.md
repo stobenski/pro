@@ -1,5 +1,4 @@
 # Awesome WM 4.x Pro themes 
----------------------
 
 ## Description
 A set of themes for the Awesome window manager, version 4.x.
