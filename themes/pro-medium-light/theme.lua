@@ -1,27 +1,32 @@
+local gears = require("gears")
 
-                -- [    Pro Medium Light theme for Awesome 3.5.5    ] --
-                -- [                 author: barwinco               ] --
-                -- [         http://github.com/barwinco/pro         ] --
+local taglist_types = {
+    "bubbles",        -- 1
+    "sticks",         -- 2
+}
 
--- // got the idea from Holo theme by Luke Bonham (https://github.com/copycat-killer)
+local chosen_taglist_type = taglist_types[2]
+local theme           = {}
+--theme.dir             = os.getenv("HOME") .. "/.config/awesome/themes/pro-medium-light"
+theme.dir             = os.getenv("HOME") .. "/code/awesome-pro/themes/pro-medium-light"
 
--- patch for taglist: https://github.com/awesomeWM/awesome/pull/39
-
-
-theme            = {}
-theme.icons      = os.getenv("HOME") .. "/.config/awesome/themes/pro-medium-light/icons/"
-theme.wallpaper  = os.getenv("HOME") .. "/.config/awesome/themes/pro-medium-light/wallpapers/pro-medium-light-shadow.png"
+theme.icons           = theme.dir .. "/icons"
+theme.wallpaper       = theme.dir .. "/wallpapers/pro-medium-light-shadow.png"
 theme.panel      = "png:" .. theme.icons .. "/panel/panel.png"
 theme.font       = "Terminus 9"
+theme.calendar_font   = "Meslo LGS Regular 10"
+theme.fs_font         = "Meslo LGS Regular 10"
 
 theme.fg_normal  = "#404040"
 theme.fg_focus   = "#111111"
 theme.fg_urgent  = "#CC9393"
+theme.bat_fg_critical   = "#232323"
 
 theme.bg_normal  = "#B8B8B8"
 theme.bg_focus   = "#888888"
 theme.bg_urgent  = "#3F3F3F"
 theme.bg_systray = "#b8b8b8"
+theme.bat_bg_critical   = "#ff0000"
 
 theme.clockgf    = "#eeeeee"
 
@@ -37,6 +42,16 @@ theme.border_marked = "#000000"
 theme.menu_height = 16
 theme.menu_width  = 160
 
+-- Notifications
+theme.notification_font                         = "Meslo LGS Regular 12"
+theme.notification_bg                           = "#232323"
+theme.notification_fg                           = "e4e4e4"
+theme.notification_border_width                 = 0
+theme.notification_border_color                 = "#232323"
+theme.notification_shape                        = gears.shape.infobubble
+theme.notification_opacity                      = 1
+theme.notification_margin                       = 30
+
 -- | Layout | --
 
 theme.layout_floating   = theme.icons .. "/panel/layouts/floating.png"
@@ -45,21 +60,21 @@ theme.layout_tileleft   = theme.icons .. "/panel/layouts/tileleft.png"
 theme.layout_tilebottom = theme.icons .. "/panel/layouts/tilebottom.png"
 theme.layout_tiletop    = theme.icons .. "/panel/layouts/tiletop.png"
 
--- | Taglist | --
+-- Taglist
 
-theme.taglist_bg_empty    = "png:" .. theme.icons .. "/panel/taglist/empty.png"
-theme.taglist_bg_occupied = "png:" .. theme.icons .. "/panel/taglist/occupied.png"
-theme.taglist_bg_urgent   = "png:" .. theme.icons .. "/panel/taglist/urgent.png"
-theme.taglist_bg_focus    = "png:" .. theme.icons .. "/panel/taglist/focus.png"
+theme.taglist_bg_empty    = "png:" .. theme.icons .. "/panel/taglist/" .. chosen_taglist_type .. "/empty.png"
+theme.taglist_bg_occupied = "png:" .. theme.icons .. "/panel/taglist/" .. chosen_taglist_type .. "/occupied.png"
+theme.taglist_bg_urgent   = "png:" .. theme.icons .. "/panel/taglist/" .. chosen_taglist_type .. "/urgent.png"
+theme.taglist_bg_focus    = "png:" .. theme.icons .. "/panel/taglist/" .. chosen_taglist_type .. "/focus.png"
 theme.taglist_font        = "Terminus 11"
 
 -- | Tasklist | --
 
 theme.tasklist_font                 = "Terminus 8"
 theme.tasklist_disable_icon         = true
-theme.tasklist_bg_normal            = "png:" .. theme.icons .. "panel/tasklist/normal.png"
-theme.tasklist_bg_focus             = "png:" .. theme.icons .. "panel/tasklist/focus.png"
-theme.tasklist_bg_urgent            = "png:" .. theme.icons .. "panel/tasklist/urgent.png"
+theme.tasklist_bg_normal            = "png:" .. theme.icons .. "/panel/tasklist/normal.png"
+theme.tasklist_bg_focus             = "png:" .. theme.icons .. "/panel/tasklist/focus.png"
+theme.tasklist_bg_urgent            = "png:" .. theme.icons .. "/panel/tasklist/urgent.png"
 theme.tasklist_fg_focus             = "#505050"
 theme.tasklist_fg_urgent            = "#505050"
 theme.tasklist_fg_normal            = "#5a5a5a"
@@ -121,9 +136,18 @@ theme.widget_mail = theme.icons .. "/panel/widgets/widget_mail.png"
 theme.widget_netdl = theme.icons .. "/panel/widgets/widget_netdl.png"
 theme.widget_netul = theme.icons .. "/panel/widgets/widget_netul.png"
 
+-- Battery
+theme.widget_ac             = theme.icons .. "/panel/widgets/battery/ac.png"
+theme.widget_battery        = theme.icons .. "/panel/widgets/battery/battery.png"
+theme.widget_battery_low    = theme.icons .. "/panel/widgets/battery/battery_low.png"
+theme.widget_battery_empty  = theme.icons .. "/panel/widgets/battery/battery_empty.png"
+
+
 -- | Misc | --
 
-theme.menu_submenu_icon = theme.icons .. "submenu.png"
+theme.menu_submenu_icon = theme.icons .. "/submenu.png"
+
+theme.chrome         = theme.dir .. "/icons/apps/chrome.png"
 
 return theme
 
