@@ -6,8 +6,8 @@ local taglist_types = {
 
 local chosen_taglist_type = taglist_types[1]
 local theme           = {}
---theme.dir             = os.getenv("HOME") .. "/.config/awesome/themes/pro-gotham"
-theme.dir             = os.getenv("HOME") .. "/code/awesome-pro/themes/pro-gotham"
+theme.dir             = os.getenv("HOME") .. "/.config/awesome/themes/pro-gotham"
+--theme.dir             = os.getenv("HOME") .. "/code/awesome-pro/themes/pro-gotham"
 
 theme.icons           = theme.dir .. "/icons"
 theme.wallpaper       = theme.dir .. "/wallpapers/pro-gotham-shadow.png"
