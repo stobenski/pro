@@ -4,3 +4,6 @@
 [submodule "scratch"]
 	path = scratch
 	url = https://github.com/proteansec/awesome-scratch
+[submodule "freedesktop"]
+	path = freedesktop
+	url = https://github.com/lcpz/awesome-freedesktop.git
