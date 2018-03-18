@@ -1,6 +1,9 @@
 [submodule "lain"]
 	path = lain
-	url = https://github.com/copycat-killer/lain
-[submodule "cyclefocus"]
-	path = cyclefocus
-	url = https://github.com/blueyed/awesome-cyclefocus
+	url = https://github.com/lcpz/lain
+[submodule "scratch"]
+	path = scratch
+	url = https://github.com/proteansec/awesome-scratch
+[submodule "freedesktop"]
+	path = freedesktop
+	url = https://github.com/lcpz/awesome-freedesktop.git
