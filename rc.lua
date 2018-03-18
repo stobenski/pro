@@ -74,7 +74,7 @@ local themes = {
     "pro-medium-light",   -- 5
 }
 
-local chosen_theme = themes[3]
+local chosen_theme = themes[1]
 local modkey       = "Mod4"
 local altkey       = "Mod1"
 local terminal     = "xterm"
@@ -87,11 +87,9 @@ local home   = os.getenv("HOME")
 
 -- Theme
 beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/" .. chosen_theme .. "/theme.lua")
---beautiful.init(os.getenv("HOME") .. "/code/awesome-pro/themes/" .. chosen_theme .. "/theme.lua")
 
 -- Layouts
 awful.util.terminal = terminal
-awful.util.tagnames = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
 awful.layout.layouts = {
     awful.layout.suit.tile,
     awful.layout.suit.floating,
@@ -287,16 +285,14 @@ kbd_widget.bgimage=beautiful.widget_display
 -- FS
 local fs_icon = wibox.widget.imagebox(beautiful.widget_fs)
 local fs = lain.widget.fs({
-    options  = "--exclude-type=tmpfs",
-    partition = "/home",
     notification_preset = { fg = beautiful.fg_normal, bg = beautiful.bg_normal, font = beautiful.fs_font },
     settings = function()
-        widget:set_markup(space3 .. fs_now.available_gb .. "GB" .. markup.font("Tamsyn 4", " "))
+        local fsp = string.format(" %3.2f %s ", fs_now["/home"].free, fs_now["/home"].units)
+        widget:set_markup(markup.font(beautiful.font, fsp))
     end
 })
 local fs_widget = wibox.container.background(fs.widget)
 fs_widget.bgimage=beautiful.widget_display
-
 -- MPD
 
 prev_icon = wibox.widget.imagebox(beautiful.mpd_prev)
@@ -1020,31 +1016,10 @@ awful.rules.rules = {
     { rule_any = { type = { "dialog", "normal" } },
       properties = { titlebars_enabled = true } },
 
-    -- Set Firefox to always map on the first tag on screen 1.
-    { rule = { class = "Firefox" },
-      properties = { screen = 1, switchtotag = true, tag = awful.util.tagnames[4] } },
-    { rule = { class = "Subl3" },
-      properties = { screen = 1, switchtotag = true, tag = awful.util.tagnames[1] } },
     { rule = { class = "Caja" },
       properties = { floating = true, geometry = { x=200, y=150, height=600, width=1100 } } },
     { rule = { class = "Nm-connection-editor" },
       properties = { floating = true } },
-    { rule = { class = "jetbrains-webstorm" },
-      properties = { screen = 1, tag = awful.util.tagnames[2] } },
-    { rule = { class = "jetbrains-idea" },
-      properties = { screen = 1, tag = awful.util.tagnames[2] } },
-    { rule = { class = "jetbrains-pycharm" },
-      properties = { screen = 1, tag = awful.util.tagnames[2] } },
-    { rule = { class = "Vivaldi-stable" },
-      properties = { screen = 1, switchtotag = true, tag = awful.util.tagnames[3] } },
-    { rule = { class = "Vivaldi-snapshot" },
-      properties = { screen = 1, switchtotag = true, tag = awful.util.tagnames[3] } },
-    { rule = { class = "Google-chrome" },
-      properties = { screen = 1, switchtotag = true, tag = awful.util.tagnames[4] } },
-    { rule = { class = "Google-chrome-unstable" },
-      properties = { screen = 1, tag = awful.util.tagnames[5] } },
-    { rule = { class = "Transmission-gtk" },
-      properties = { screen = 1, switchtotag = true, tag = awful.util.tagnames[6] } },
     { rule = { instance = "plugin-container" },
       properties = { floating = true } },
     { rule = { instance = "exe" },
